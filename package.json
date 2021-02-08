@@ -1,0 +1,25 @@
+{
+  "name": "employee-tracker",
+  "version": "1.0.0",
+  "description": "A solution for managing a company's employees",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/onomatopoetica/employee-tracker.git"
+  },
+  "author": "onomatopoetica",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/onomatopoetica/employee-tracker/issues"
+  },
+  "homepage": "https://github.com/onomatopoetica/employee-tracker#readme",
+  "dependencies": {
+    "console.table": "^0.10.0",
+    "inquirer": "^7.3.3",
+    "mysql": "^2.18.1"
+  }
+}
