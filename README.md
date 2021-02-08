@@ -77,7 +77,7 @@ Enter command 'npm install mysql inquirer console.table' after cloning the repo 
 ```    
 #### Contribution Guidelines
 ```
-When contributing to this repository, please first contact the project team with the change you wish to make. See contact details below.
+When contributing to this repository, please contact the project team for discussion. See contact details below.
 ```
 ## Questions 
 #### Connect with the project team: [Onomatopoetica](https://github.com/onomatopoetica)
