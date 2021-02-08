@@ -5,7 +5,7 @@
 A solution for managing a startup company's employees using `Node`, `InquirerJs`, and `MySQL`.
 
 ## Project Links
-[Repo Link](https://github.com/onomatopoetica/note-taker) <br>
+[Repo Link](https://github.com/onomatopoetica/employee-tracker) <br>
 **NOTE:** Since this application cannot be deployed on GitHub please see the **Demo** section below for an overview of its functionality and the **Getting Started** section for more information regarding installation, usage, contribution guidelines, tests and where to go for questions.
     
 ## Table of Contents
