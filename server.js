@@ -2,8 +2,8 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
 var cTable = require("console.table");
-var employeeSeeds
 
+// Establishing connection to MySQL Workbench
 var connection = mysql.createConnection({
     host: "localhost",
     port: 3306,
@@ -18,11 +18,41 @@ connection.connect(function (err) {
     console.log("connected as id " + connection.threadId + "\n");
 });
 
-connection.query('SELECT * from employee', function (err, rows, fields) {
-    if (!err)
-        console.log('The solution is: ', rows);
-    else
-        console.log('Error while performing Query.');
-});
+// Create a function to access each table:
+// e.g., function employeeTable() 
+employeeTable();
+
+function employeeTable() {
+    connection.query('SELECT * from employee', function (err, rows) {
+        if (!err)
+            console.log('All employees are: ', rows);
+        else
+            console.log('Error while performing Query...');
+    });
+}
+// connection.end();
+
+roleTable();
+
+function roleTable() {
+    connection.query('SELECT * from role', function (err, rows) {
+        if (!err)
+            console.log('The employee roles are: ', rows);
+        else
+            console.log('Error while performing Query...');
+    });
+}
+// connection.end();
+
+departmentTable();
+
+function departmentTable() {
+    connection.query('SELECT * from department', function (err, rows) {
+        if (!err)
+            console.log('The departments are: ', rows);
+        else
+            console.log('Error while performing Query...');
+    });
+}
 connection.end();
 
