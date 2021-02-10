@@ -109,7 +109,16 @@ function addEmployees() {
             type: "list",
             name: "manager",
             message: "What is the employee's manager's name?",
-            choices: ["Monica DeSantis", "Jake Rittenhouse", "Tom Cat", "Zac Black", "Theo Anders", "Jenna Marbles", "Peter Pumpkineater", "Veronique LaCroix", "Sebastian Bach"]
+            choices: [
+                "Monica DeSantis",
+                "Jake Rittenhouse",
+                "Tom Cat",
+                "Zac Black",
+                "Theo Anders",
+                "Jenna Marbles",
+                "Peter Pumpkineater",
+                "Veronique LaCroix",
+                "Sebastian Bach"]
         },
     ]).then(function (answer) {
         // When finished prompting, insert a new employee into the DB with the user answers
@@ -184,7 +193,7 @@ function addRoles() {
             type: "list",
             name: "department_id",
             message: "What is the department ID for the role?",
-            choices: [1, 2, 3, 4, 5, 6, 7]
+            choices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         },
     ]).then(function (answer) {
         // When finished prompting, insert a new role into the DB with the user answers
@@ -242,7 +251,7 @@ function addDepartments() {
 }
 
 function viewEmployees() {
-    // View all items in the employee table without manager - 
+    // View all items in the employee table without manager 
     connection.query('SELECT employee.id, first_name, last_name, title, salary, department_name FROM employee INNER JOIN role ON employee.role_id = role.id INNER JOIN department ON role.department_id = department.id \n', function (err, res) {
         if (!err)
             console.table('Here are your employees: \n', res);
@@ -255,7 +264,7 @@ function viewEmployees() {
 }
 
 function viewEmployeesByManager() {
-    // View all items in the employee table without manager - 
+    // View all items in the employee table by manager 
     connection.query('SELECT employee.id, manager, first_name, last_name, title, salary, department_name FROM employee INNER JOIN role ON employee.role_id = role.id INNER JOIN department ON role.department_id = department.id \n', function (err, res) {
         if (!err)
             console.table('Here are your employees: \n', res);

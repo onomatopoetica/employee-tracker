@@ -49,7 +49,7 @@ VALUES
 INSERT INTO role (title, salary, department_id)
 VALUES 
 ("CEO", 500000, 1),
-("CFO", 400000, 1)
+("CFO", 400000, 1),
 ("Chief Engineer", 250000, 1),
 ("CMO", 200000, 4),
 ("Junior Engineer", 75000, 3),
@@ -67,7 +67,7 @@ VALUES
 INSERT INTO department (department_name)
 VALUES 
 ("Executive Office"),
-("Finance")
+("Finance"),
 ("Engineering"),
 ("Marketing"),
 ("HR"),
@@ -77,7 +77,7 @@ VALUES
 ("BusDev"),
 ("DevOps");
 
-SELECT first_name, last_name, title, salary, department_name, manager 
+SELECT employee.id, first_name, last_name, title, salary, department_name, manager 
 FROM employee
 INNER JOIN role
 ON employee.role_id = role.id
