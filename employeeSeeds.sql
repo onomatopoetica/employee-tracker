@@ -23,7 +23,7 @@ CREATE TABLE role (
 
 CREATE TABLE department (
   id INT NOT NULL AUTO_INCREMENT,
-  dept_name VARCHAR(30) NOT NULL,
+  department_name VARCHAR(30) NOT NULL,
   PRIMARY KEY (id)
 );
 
@@ -57,7 +57,7 @@ VALUES
 ("VP BusDev", 125000, 7);
 
 -- DEPARTMENT
-INSERT INTO department (dept_name)
+INSERT INTO department (department_name)
 VALUES 
 ("Engineering"),
 ("Marketing"),
@@ -66,7 +66,3 @@ VALUES
 ("Training"),
 ("Sales"),
 ("BusDev");
-
--- SELECT * FROM employee;
--- SELECT * FROM role;
--- SELECT * FROM department;

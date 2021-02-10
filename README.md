@@ -73,7 +73,7 @@ The application is a solution for managing a startup company's employees using N
 ```
 #### Tests
 ```
-Enter command 'npm install mysql inquirer console.table' after cloning the repo to install MySQL, Inquirer npm and console.table npm. The application will be invoked by using nodemon or entering the following in the command line: 'node server.js'.
+Enter command 'npm install mysql inquirer console.table' after cloning the repo to install MySQL, Inquirer npm and console.table npm. The application will be invoked by entering the following in the command line: 'node server.js'.
 ```    
 #### Contribution Guidelines
 ```
