@@ -33,6 +33,7 @@ function initialQuestions() {
                 "Add Roles",
                 "Add Departments",
                 "View Employees",
+                "View Employees By Manager",
                 "View Roles",
                 "View Departments",
                 "Update Employee Roles",
@@ -56,6 +57,9 @@ function initialQuestions() {
                 break;
             case "View Employees":
                 viewEmployees();
+                break;
+            case "View Employees By Manager":
+                viewEmployeesByManager();
                 break;
             case "View Roles":
                 viewRoles();
@@ -93,13 +97,19 @@ function addEmployees() {
             type: "list",
             name: "role_id",
             message: "What is the employee's role ID?",
-            choices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]
+            choices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
         },
         {
             type: "list",
             name: "manager_id",
             message: "What is the employee's manager ID?",
-            choices: [1, 2, 3, 4, 5, 6, 7]
+            choices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 0]
+        },
+        {
+            type: "list",
+            name: "manager",
+            message: "What is the employee's manager's name?",
+            choices: ["Monica DeSantis", "Jake Rittenhouse", "Tom Cat", "Zac Black", "Theo Anders", "Jenna Marbles", "Peter Pumpkineater", "Veronique LaCroix", "Sebastian Bach"]
         },
     ]).then(function (answer) {
         // When finished prompting, insert a new employee into the DB with the user answers
@@ -109,7 +119,8 @@ function addEmployees() {
                 first_name: answer.first_name,
                 last_name: answer.last_name,
                 role_id: answer.role_id,
-                manager_id: answer.manager_id
+                manager_id: answer.manager_id,
+                manager: answer.manager
             },
             function viewEmployees() {
                 // Displaying the updated employee table after user adds an employee
@@ -231,9 +242,21 @@ function addDepartments() {
 }
 
 function viewEmployees() {
-    // View all items in the employee table
-    var query = "SELECT * FROM employee";
-    connection.query(query, function (err, res) {
+    // View all items in the employee table without manager - 
+    connection.query('SELECT employee.id, first_name, last_name, title, salary, department_name FROM employee INNER JOIN role ON employee.role_id = role.id INNER JOIN department ON role.department_id = department.id \n', function (err, res) {
+        if (!err)
+            console.table('Here are your employees: \n', res);
+        else
+            console.log('Error while performing query...');
+        // Re-prompt the user for what they would like to do
+        initialQuestions();
+    });
+
+}
+
+function viewEmployeesByManager() {
+    // View all items in the employee table without manager - 
+    connection.query('SELECT employee.id, manager, first_name, last_name, title, salary, department_name FROM employee INNER JOIN role ON employee.role_id = role.id INNER JOIN department ON role.department_id = department.id \n', function (err, res) {
         if (!err)
             console.table('Here are your employees: \n', res);
         else
@@ -314,7 +337,7 @@ function updateEmployeeRoles() {
 
 function finishedTableData() {
     // User gets a full view of their data using INNER JOIN to combine data from all tables
-    connection.query('SELECT first_name, last_name, title, salary, department_name FROM employee INNER JOIN role ON employee.role_id = role.id INNER JOIN department ON role.department_id = department.id \n', function (err, properties) {
+    connection.query('SELECT employee.id, first_name, last_name, title, salary, department_name, manager FROM employee INNER JOIN role ON employee.role_id = role.id INNER JOIN department ON role.department_id = department.id \n', function (err, properties) {
         if (!err)
             console.table('Here is all of your finished data: \n', properties);
         else

@@ -10,6 +10,7 @@ CREATE TABLE employee (
   last_name VARCHAR(30) NOT NULL,
   role_id INT(30) NOT NULL,
   manager_id INT(30) NULL,
+  manager VARCHAR(30) NULL,
   PRIMARY KEY (id)
 );
 
@@ -28,41 +29,57 @@ CREATE TABLE department (
 );
 
 -- EMPLOYEE 
-INSERT INTO employee (first_name, last_name, role_id, manager_id)
+INSERT INTO employee (first_name, last_name, role_id, manager_id, manager)
 VALUES 
-("Monica", "DeSantis", 1, 1),
-("Veronique", "LaCroix", 2, 1),
-("Scarlett", "LeRouge", 3, 2),
-("Zac", "Black", 4, 3),
-("Jake", "Rittenhouse", 5, 4),
-("Theo", "Anders", 6, 5),
-("Jenna", "Marbles", 7, 6),
-("Mary", "Lamb", 3, 7),
-("Jack", "Vite", 2, 3),
-("Tom", "Cat", 1, 7),
-("Billy", "Goat", 1, 1),
-("Sebastian", "Bach", 4, NULL),
-("Peter", "Pumpkineater", 7, NULL);
+("Monica", "DeSantis", 1, NULL, NULL),
+("Veronique", "LaCroix", 2, 1, "Monica DeSantis"),
+("Scarlett", "LeRouge", 3, 2, "Jake Rittenhouse"),
+("Zac", "Black", 4, 3, "Tom Cat"),
+("Jake", "Rittenhouse", 5, 4, "Zac Black"),
+("Theo", "Anders", 6, 5, "Jake Rittenhouse"),
+("Jenna", "Marbles", 7, 6, "Theo Anders"),
+("Mary", "Lamb", 8, 7, "Jenna Marbles"),
+("Jack", "Vite", 9, 13, "Peter Pumpkineater"),
+("Tom", "Cat", 10, 2, "Veronique LaCroix"),
+("Billy", "Goat", 11, 12, "Sebastain Bach"),
+("Sebastian", "Bach", 12, NULL, NULL),
+("Peter", "Pumpkineater", 13, NULL, NULL);
 
 -- ROLE
 INSERT INTO role (title, salary, department_id)
 VALUES 
+("CEO", 500000, 1),
+("CFO", 400000, 1)
 ("Chief Engineer", 250000, 1),
-("CMO", 150000, 2),
-("Junior Engineer", 75000, 1),
-("HR Manager", 100000, 3),
-("VP Sales", 125000, 6),
-("DevOps Manager", 100000, 4),
-("Training Director", 150000, 5),
-("VP BusDev", 125000, 7);
+("CMO", 200000, 4),
+("Junior Engineer", 75000, 3),
+("HR Manager", 100000, 5),
+("VP Sales", 125000, 8),
+("DevOps Manager", 100000, 10),
+("Training Director", 150000, 7),
+("VP BusDev", 125000, 9),
+("COO", 425000, 1),
+("CTO", 425000, 1),
+("EVP DevOps", 300000, 1);
+
 
 -- DEPARTMENT
 INSERT INTO department (department_name)
 VALUES 
+("Executive Office"),
+("Finance")
 ("Engineering"),
 ("Marketing"),
 ("HR"),
 ("DevOps"),
 ("Training"),
 ("Sales"),
-("BusDev");
+("BusDev"),
+("DevOps");
+
+SELECT first_name, last_name, title, salary, department_name, manager 
+FROM employee
+INNER JOIN role
+ON employee.role_id = role.id
+INNER JOIN department
+ON role.department_id = department.id
