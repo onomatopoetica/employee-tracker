@@ -23,7 +23,7 @@ A solution for managing a startup company's employees using `Node`, `InquirerJs`
  
 ## About The Project
 
-This project scope was to create an application that can be used to create an interface or `Content Management System` that makes it easy for non-developers to view and interact with information stored in databases. The project's scope included architeching and building a solution for managing a company's employees using `Node`, `InquirerJs`, and `MySQL`.
+This project scope was to create an application that can be used to create an interface or `Content Management System` that makes it easy for non-developers to view and interact with information stored in databases. The project's scope included architecting and building a solution for managing a company's employees using `Node`, `InquirerJs`, and `MySQL`.
   
 The dependencies are `PLACEHOLDER`.
 
