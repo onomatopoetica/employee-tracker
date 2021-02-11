@@ -260,20 +260,18 @@ function viewEmployees() {
         // Re-prompt the user for what they would like to do
         initialQuestions();
     });
-
 }
 
 function viewEmployeesByManager() {
     // View all items in the employee table by manager 
     connection.query('SELECT employee.id, manager, first_name, last_name, title, salary, department_name FROM employee INNER JOIN role ON employee.role_id = role.id INNER JOIN department ON role.department_id = department.id \n', function (err, res) {
         if (!err)
-            console.table('Here are your employees: \n', res);
+            console.table('Here are your employees by manager: \n', res);
         else
             console.log('Error while performing query...');
         // Re-prompt the user for what they would like to do
         initialQuestions();
     });
-
 }
 
 function viewRoles() {
@@ -324,12 +322,12 @@ function updateEmployeeRoles() {
     ]).then(function (answer) {
         // When finished prompting, assign an updated employee role into the DB for the specified employee
         connection.query(
-            "UPDATE employee SET id WHERE first_name AND last_name",
-            {
-                role_id: answer.role_id,
-                first_name: answer.first_name,
-                last_name: answer.last_name,
-            },
+            "UPDATE employee SET role_id = ? WHERE first_name = ? AND last_name = ?",
+            [
+                answer.role_id,
+                answer.first_name,
+                answer.last_name,
+            ],
             function viewEmployees() {
                 connection.query('SELECT * from employee', function (err, rows) {
                     if (!err)
