@@ -113,6 +113,11 @@ function addEmployees() {
                 message: "What is the employee's last name?"
             },
             {
+                type: "input",
+                name: "manager_id",
+                message: "What is the manager ID number for this employee?"
+            },
+            {
                 type: "list",
                 name: "role",
                 choices: function () {
@@ -137,6 +142,7 @@ function addEmployees() {
                 {
                     first_name: answer.first_name.trim(),
                     last_name: answer.last_name.trim(),
+                    manager_id: answer.manager_id,
                     role_id: roleID,
                 },
                 function viewEmployees() {
@@ -212,10 +218,9 @@ function addRoles() {
             message: "What is the salary for this role?",
         },
         {
-            type: "list",
+            type: "input",
             name: "department_id",
             message: "What is the department ID for the role?",
-            choices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
         },
     ]).then(function (answer) {
         // When finished prompting, insert a new role into the DB with the user answers
@@ -349,10 +354,9 @@ function updateEmployeeRoles() {
             message: "What is the last name of the employee you want to update?",
         },
         {
-            type: "list",
+            type: "input",
             name: "role_id",
             message: "What is the employee's NEW role ID?",
-            choices: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
         },
     ]).then(function (answer) {
         // When finished prompting, assign an updated employee role into the DB for the specified employee
