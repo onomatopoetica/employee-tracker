@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/onomatopoetica/employee-tracker#readme",
   "dependencies": {
+    "asciiart-logo": "^0.2.6",
+    "chalk": "^4.1.0",
     "console.table": "^0.10.0",
     "inquirer": "^7.3.3",
     "mysql": "^2.18.1"

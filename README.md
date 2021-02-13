@@ -25,7 +25,7 @@ A solution for managing a startup company's employees using `Node`, `InquirerJs`
 
 This project scope was to create an application that can be used to create an interface or `Content Management System` that makes it easy for non-developers to view and interact with information stored in databases. The project's scope included architecting and building a solution for managing a company's employees using `Node`, `InquirerJs`, and `MySQL`.
   
-The dependencies are `PLACEHOLDER`.
+The dependencies are `MySQL`, `InquirerJs`, and `Console.table`. ASCIIart-logo npm and Chalk npm are also dependencies for colorful text and splash screens at the beginning and end of the application.
 
 Because this application cannot be deployed on GitHub, a walkthrough video demonstrates its functionality below.
 
@@ -39,7 +39,12 @@ So that I can organize and plan my business
 
 ## Acceptance Criteria
 
-`PLACEHOLDER`
+```
+GIVEN a command-line application that accepts user input
+WHEN prompted, I am able to add new departments, roles, or employees
+WHEN prompted, I am able to view departments, roles, employees, or update employee roles
+THEN when I am finished, I can view all of my updates in a table of my employee information
+```
 
 ## Demo
 
@@ -62,6 +67,8 @@ So that I can organize and plan my business
 * Node.js
 * Inquirer npm
 * Console.table npm
+* ASCIIart-logo npm
+* Chalk npm
     
 #### Installation: 
 ```  
