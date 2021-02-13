@@ -54,11 +54,13 @@ THEN when I am finished, I can view all of my updates in a table of my employee 
 
 #### The following is a brief overview of the application in operation and rendering of the employee tracker app. See full video demonstration on "See how it works!" link above: 
     
-<img src="https://PLACEHOLDER.GIF" alt="screenshot" title="app video" width="900" height="auto"> 
+<img src="/assets/eTracker.GIF" alt="screenshot" title="app video" width="900" height="auto"> 
 
 #### The following are screenshots of the application and overview of its functionality: <br>
 
-<img src="/PLACEHOLDER.png" alt="app screenshot" width="1000" height="auto">
+<img src="/assets/ETrckrSplsh.png" alt="app screenshot" width="900" height="auto">
+<img src="/assets/eTrackerCmplete.png" alt="app screenshot" width="900" height="auto">
+
 
 ## Getting Started
     
