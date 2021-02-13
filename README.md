@@ -40,7 +40,7 @@ So that I can organize and plan my business
 ## Acceptance Criteria
 
 ```
-GIVEN a command-line application that accepts user input
+GIVEN a command line application that accepts user input
 WHEN prompted, I am able to add new departments, roles, or employees
 WHEN prompted, I am able to view departments, roles, employees, or update employee roles
 THEN when I am finished, I can view all of my updates in a table of my employee information
@@ -50,7 +50,7 @@ THEN when I am finished, I can view all of my updates in a table of my employee 
 
 #### The following is a video of the employee tracker application performance and its functionality:
 
-[See how it works!](https://drive.google.com/PLACEHOLDER)  
+[See how it works!](https://drive.google.com/file/d/1almMqwuk9SEOuqIaTuILCXlkyWfirzgu/view?usp=sharing)  
 
 #### The following is a brief overview of the application in operation and rendering of the employee tracker app. See full video demonstration on "See how it works!" link above: 
     
