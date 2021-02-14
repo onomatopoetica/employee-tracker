@@ -235,7 +235,7 @@ function addRoles() {
             function viewRoles() {
                 connection.query('SELECT * from role', function (err, rows) {
                     if (!err)
-                        console.table('Here is your updated list of employee roles: ', rows);
+                        console.table(`Done! ${answer.title} has been added. Here is your updated list of employee roles: \n`, rows);
                     else
                         console.log('Error while performing query...');
                     // Re-prompt the user for what they would like to do
