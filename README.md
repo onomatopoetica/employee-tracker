@@ -25,7 +25,7 @@ A solution for managing a startup company's employees using `Node`, `InquirerJs`
 
 This project scope was to create an application that can be used to create an interface or `Content Management System` that makes it easy for non-developers to view and interact with information stored in databases. The project's scope included architecting and building a solution for managing a company's employees using `Node`, `InquirerJs`, and `MySQL`.
   
-The dependencies are `MySQL`, `InquirerJs`, and `Console.table`. ASCIIart-logo npm and Chalk npm are also dependencies for colorful text and splash screens at the beginning and end of the application.
+The dependencies are `MySQL`, `InquirerJs`, and `Console.table`. `ASCIIart-logo npm` and `Chalk npm` are also dependencies for colorful text and splash screens at the beginning and end of the application.
 
 Because this application cannot be deployed on GitHub, a walkthrough video demonstrates its functionality below.
 
@@ -54,7 +54,7 @@ THEN when I am finished, I can view all of my updates in a table of my employee 
 
 #### The following is a brief overview of the application in operation and rendering of the employee tracker app. See full video demonstration on "See how it works!" link above: 
     
-<img src="/assets/eTracker.GIF" alt="screenshot" title="app video" width="900" height="auto"> 
+<img src="/assets/eTrackr.GIF" alt="screenshot" title="app video" width="900" height="auto"> 
 
 #### The following are screenshots of the application and overview of its functionality: <br>
 
